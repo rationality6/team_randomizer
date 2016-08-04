@@ -6,7 +6,7 @@ def randomiz(team_array, how_many, method)
     array_result = []
     team_count = 1
 
-    how_many = team_array.length / how_many if method
+    how_many = team_array.length / how_many if method == 'numberpercount'
 
     slice = team_array_rand.each_slice(how_many).to_a
     for team in slice
@@ -27,6 +27,6 @@ post '/' do
     @people = $get_people.split(',')
     @method = params[:method] # radio button
     @how_many = params[:how_many].to_i # teams or people based on method
-    $randomiz = randomiz($people, @how_many, @method) # 2 will be the count split how_many
+    $randomiz = randomiz(@people, @how_many, @method) # 2 will be the count split how_many
     redirect back
 end

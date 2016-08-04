@@ -11,7 +11,7 @@
             <br>
             <h1>Team Randomizer</h1>
             <form action="/" method='post'>
-                <textarea name="names" id="" cols="80" rows="5"><%= $people.to_s %></textarea>
+                <textarea name="names" id="" cols="80" rows="5"><%= $get_people.to_s %></textarea>
                 <br>
                 <h3>Method</h3>
                 <label>Number per Team</label>
@@ -22,13 +22,15 @@
                 <br>
                 <hr>
                 <label>Number</label>
-                <input type="name" name="how_many">
+                <input type="name" name="how_many" value=2>
                 <br>
                 <input class='btn btn-primary' type="submit">
                 <br><hr>
             </form>
 
-            <h1><%= $randomiz %></h1>
+            <% for i in $randomiz  %>
+            <h1><%= i %></h1>
+            <% end %>
 
         </div>
 
