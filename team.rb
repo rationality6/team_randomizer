@@ -6,8 +6,9 @@ def randomiz(team_array, how_many, method)
     array_result = []
     team_count = 1
 
-    how_many = team_array.length / how_many if method == 'numberpercount'
-
+    how_many = (team_array.length / Float(how_many)).ceil if method == 'teamcount'
+    # how_many = team_array.length / how_many if method == 'teamcount'
+    print how_many
     slice = team_array_rand.each_slice(how_many).to_a
     for team in slice
         array_result << { team_count => team }
@@ -16,7 +17,9 @@ def randomiz(team_array, how_many, method)
     array_result
 end
 
-# print randomiz([1, 2, 3, 4, 5, 6], 3, true)
+print randomiz([1, 2, 3, 4, 5, 6, 7, 8], 3, 'teamcount')
+
+$randomiz = {}
 
 get '/' do
     erb :index
