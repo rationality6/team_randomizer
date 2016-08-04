@@ -22,6 +22,6 @@ end
 
 post '/' do
     @people = params[:names].split(",")
-    $randomiz = randomiz(@people, 2)
+    $randomiz = randomiz(@people, 4)
     redirect back
 end
