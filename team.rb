@@ -1,11 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-# def initialize(array)
-#     puts 'Odd number of member.' if array.length.odd?
-#     team_array = array
-# end
-
 # def randomiz(team_array, method, how_many)
 #     team_array_rand = team_array.shuffle
 #     team_count = 1
@@ -30,21 +25,15 @@ def randomiz(team_array, how_many)
     end
 end
 
-# class validator
-#     def teamCount
-#     end
-#     def numTeams
-#     end
-# end
-
 get '/' do
     erb :index
 end
 
 post '/' do
     @people = params[:names].split(",")
-    @method = params[:method] #radio button
-    @how_many = params[:how_many] #teams or people based on method
-    $randomiz = randomiz(@people, 4) #2 will be the count split how_many
+    @teamcount = params[:teamcount] #radio button
+    @numberpercount = params[:numberpercount] #radio button
+    @how_many = params[:how_many].to_i #teams or people based on method
+    $randomiz = randomiz(@people, @how_many) #2 will be the count split how_many
     redirect back
 end

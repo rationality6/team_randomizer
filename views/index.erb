@@ -6,36 +6,33 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
+
         <div class='container'>
-            <h1>Team Randomizer</h1>
             <br>
+            <h1>Team Randomizer</h1>
             <form action="/" method='post'>
-                <h3>Names</h3>
-                <textarea class="form-control" rows="3" name='names'></textarea>
+                <textarea name="names" id="" cols="80" rows="5"></textarea>
                 <br>
                 <h3>Method</h3>
-
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                        Team Count
-                    </label>
-                </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Number Per Team
-                    </label>
-                </div>
-
-                <input type="number" class="form-control" placeholder="number input">
-
+                <br>
+                <label>Team Count</label>
+                <input type="radio" name="teamcount">
+                <br>
+                <label>Number per Team</label>
+                <input type="radio" name="numberpercount">
+                <br>
+                <hr>
+                <label>Number</label>
+                <input type="name" name="how_many">
                 <br>
                 <input class='btn btn-primary' type="submit">
+                <br><hr>
             </form>
 
-            <h2><%= $randomiz %></h2>
         </div>
+
+        <%= $randomiz %>
+
     </body>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
