@@ -28,10 +28,23 @@
                 <br><hr>
             </form>
 
+    <div class="row">
             <% for i in $randomiz  %>
-            <h1><%= i %></h1>
-            <% end %>
 
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h1><%= i %></h1>
+                            <p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            <% end %>
+</div>
         </div>
 
     </body>
