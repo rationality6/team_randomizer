@@ -15,7 +15,7 @@ require 'sinatra/reloader'
 #     #     "Number of teams must be between 1 and the number of members"
 #     # end
 # end
-def randomiz(team_array, how_many)
+def randomiz(team_array, how_many, method)
     team_array_rand = team_array.shuffle
     team_count = 1
     slice = team_array_rand.each_slice(how_many).to_a
@@ -30,10 +30,10 @@ get '/' do
 end
 
 post '/' do
+    puts params
     @people = params[:names].split(",")
-    @teamcount = params[:teamcount] #radio button
-    @numberpercount = params[:numberpercount] #radio button
+    @method = params[:method] #radio button
     @how_many = params[:how_many].to_i #teams or people based on method
-    $randomiz = randomiz(@people, @how_many) #2 will be the count split how_many
+    $randomiz = randomiz(@people, @how_many, @method) #2 will be the count split how_many
     redirect back
 end
