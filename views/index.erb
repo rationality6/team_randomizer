@@ -30,16 +30,17 @@
 
             <div class="row">
                 <% for i in $randomiz  %>
-
+                <%for x,y in i %>
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <div class="caption">
-                            <h1><%= i %></h1>
+                            <h2><%= "Team #{x}" %></h2>
+                            <h3><%= "#{y}" %></h3>
                             <p></p>
                         </div>
                     </div>
                 </div>
-
+                <% end %>
                 <% end %>
             </div>
         </div>
