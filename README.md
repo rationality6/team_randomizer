@@ -2,6 +2,8 @@
 
 mini Sinatra UI project with teammate
 
+Make random team for any challenge.
+
 ![alt tag](img/1.png)
 
 
